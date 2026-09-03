@@ -48,6 +48,7 @@ level: 2
     - Use Write to create documentation files.
     - Use Edit to update existing documentation.
     - Use Bash to test commands and verify examples work.
+    - When authoring any document an agent consumes (a skill, AGENTS.md, CLAUDE.md, a doc reached by a pointer), read `skills/writing-for-agents/SKILL.md` for the context-pointer, information-hierarchy, and completion-criteria writing discipline.
   </Tool_Usage>
 
   <Execution_Policy>

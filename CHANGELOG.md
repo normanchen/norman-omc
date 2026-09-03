@@ -1,3 +1,22 @@
+# norman-omc: mattpocock/skills C-class skills
+
+## Release Notes
+
+Completes the mattpocock/skills integration with the four C-class skills deferred from the initial merge.
+
+### New skills
+
+- **triage**: issue/PR triage state machine (needs-triage / needs-info / ready-for-agent / ready-for-human / wontfix), redundancy check, `.omc/out-of-scope/` rejection knowledge base, and agent briefs.
+- **prototype**: throwaway prototype to answer a design question (logic branch via a single shareable HTML file, or UI branch via switchable variants).
+- **improve-codebase-architecture**: deep-module scan with a Tailwind/Mermaid HTML report and a grilling loop, built on the codebase-design vocabulary.
+- **writing-for-agents**: reference for writing agent-consumed docs (context pointers, information hierarchy, completion criteria), consulted by `writer`.
+
+### Registration
+
+- `plugin.json` skills array 43 -> 47; `skills/AGENTS.md` updated; `agents/writer.md` gains a writing-for-agents reference.
+
+---
+
 # norman-omc: mattpocock/skills integration
 
 ## Release Notes

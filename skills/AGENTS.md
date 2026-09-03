@@ -3,7 +3,7 @@
 
 # skills
 
-43 skill directories for workflow automation and specialized behaviors.
+47 skill directories for workflow automation and specialized behaviors.
 
 ## Purpose
 
@@ -79,6 +79,7 @@ Skills are reusable workflow templates that can be invoked via `/oh-my-claudecod
 |-----------|-------|---------|
 | `codebase-design/SKILL.md` | codebase-design | Deep-module vocabulary (module, interface, seam, adapter, depth, leverage, locality) plus the deletion test, consulted by architect/executor/code-reviewer/code-simplifier |
 | `domain-modeling/SKILL.md` | domain-modeling | Glossary (.omc/context.md) and ADR (.omc/adr/) discipline with the three-condition ADR test, consulted by architect/planner/analyst |
+| `writing-for-agents/SKILL.md` | writing-for-agents | Reference for writing agent-consumed docs (context pointers, information hierarchy, completion criteria), consulted by writer |
 
 ### User-invoked Tools
 
@@ -90,6 +91,9 @@ Skills are reusable workflow templates that can be invoked via `/oh-my-claudecod
 | `teach/SKILL.md` | teach | Stateful teaching workspace (lessons, reference, learning records) |
 | `git-guardrails/SKILL.md` | git-guardrails | Claude Code hooks that block dangerous git commands |
 | `setup-pre-commit/SKILL.md` | setup-pre-commit | Husky + lint-staged + Prettier pre-commit hooks |
+| `triage/SKILL.md` | triage | Issue/PR triage state machine, redundancy check, .omc/out-of-scope/ KB, agent briefs |
+| `prototype/SKILL.md` | prototype | Throwaway prototype to answer a design question (logic or UI branch) |
+| `improve-codebase-architecture/SKILL.md` | improve-codebase-architecture | Deep-module scan + visual HTML report + grilling loop |
 
 ## For AI Agents
 
