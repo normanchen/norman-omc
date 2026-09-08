@@ -1,3 +1,24 @@
+# sync: upstream v5.2.0
+
+## Release Notes
+
+Sync norman-omc to upstream oh-my-claudecode v5.2.0 (70 commits: 4 features, 36 bug fixes). mattpocock/skills integration preserved (12 skills + 10 agent edits).
+
+### Highlights
+
+- **hud/hooks hardening**: bounded git calls in `worktree-paths` (#3946/#3948/#3949), pid-aware lock recovery + bounded `.err` reclamation (#3935), Windows subprocess stdio fixes, `hooks/hooks.json` timeout 3→5s.
+- **feat(hud)**: Claude Code update hints + paste-ready update command (#3942).
+- **feat(shipyard)**: yard gate + C5 sediment pass (#3943).
+- **perf(session-search)**: bound retained matches (#3930).
+
+### Notes
+
+- Re-imported `bridge/` (9 runtime scripts) from upstream v5.2.0.
+- `dist/` not committed (regenerated via `npm run build`).
+- `plugin.json` version 5.1.0 → 5.2.0.
+
+---
+
 # norman-omc: mattpocock/skills C-class skills
 
 ## Release Notes
