@@ -66,7 +66,7 @@ Completes the mattpocock/skills integration with the four C-class skills deferre
 
 ## Release Notes
 
-Integrates the incremental value of mattpocock/skills into OMC's agents and skills, following the demote-and-unify principles from the merge plan (`docs/migrate_mattpocock_skills_to_omc.xlsx`): mattpocock skills are demoted to agent-internal prompts and reference skills rather than top-level slash commands, and all state lands in the `.omc/` namespace as the single source of truth.
+Integrates the incremental value of mattpocock/skills into OMC's agents and skills, following the demote-and-unify principles from the merge plan: mattpocock skills are demoted to agent-internal prompts and reference skills rather than top-level slash commands, and all state lands in the `.omc/` namespace as the single source of truth.
 
 ### New reference skills (consult, not run)
 
