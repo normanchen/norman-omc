@@ -1,3 +1,27 @@
+# sync: upstream v5.3.0
+
+## Release Notes
+
+Sync norman-omc to upstream oh-my-claudecode v5.3.0 (47 commits: 5 features, 3 bug fixes). mattpocock/skills integration preserved (12 skills + 10 agent edits).
+
+### Highlights
+
+- **feat(skills)**: add `loft` (#3970) and `ask-navigator` (#3969) — shipyard shape-before-steel + foggy-effort navigator.
+- **feat(graph)**: remote approval gates + workspace checkpoints/rollback (#3960).
+- **perf(hud)**: scope git path memoization per render (#3961).
+- **perf**: batch Windows cache occupancy identity checks (#3973).
+
+### Bug fixes
+
+- Preserve Windows occupancy tick precision (#3974); preserve stderr after early protocol stdout close (#3964); omit unsupported PostToolUse suppressOutput (#3958).
+
+### Notes
+
+- `bridge/` updated to v5.3.0; `dist/` not committed (regenerated via `npm run build`).
+- `plugin.json` version 5.2.0 → 5.3.0; skills 47 → 49 (add `loft` + `ask-navigator`).
+
+---
+
 # sync: upstream v5.2.0
 
 ## Release Notes
