@@ -1,3 +1,25 @@
+# norman-omc: supabase/agent-skills as first external skill provider
+
+## Release Notes
+
+Adds a Skill Federation Layer that references supabase/agent-skills as Norman-OMC's first external engineering skill provider — plus a `backend-engineer` agent and backend-domain task routing — so OMC can recognize backend tasks and automatically load Supabase expertise.
+
+### Skill Provider framework
+
+- `src/skill-providers/`: provider manifest loader, task matcher, and provenance lock (`types` / `loader` / `match` / `lock`).
+- `providers/supabase.json`: builtin manifest declaring Supabase capabilities + activation keywords (database, auth, storage, edge functions, realtime, vectors, cron, queues).
+- Reference, not copy: skills stay installed externally; `skills-lock.json` (now tracked in-repo) records `source` / `skillPath` / `computedHash`.
+
+### New agent
+
+- **backend-engineer** — backend/database engineer (Supabase/Postgres by default) that loads the active provider's skills, follows best practices, and generates migrations + security/RLS checks. Registered as a full canonical `/team` role. Agent count 19 → 20.
+
+### Routing
+
+- Backend implementation tasks (schema, migrations, RLS, auth, storage, etc.) route to `backend-engineer` via the team role router; `task-decomposer` maps `backend`/`database`/`api` components to it.
+
+---
+
 # sync: upstream v5.3.0
 
 ## Release Notes

@@ -319,7 +319,7 @@ For `/goal` behavior, rely on Claude Code/Anthropic sources: the [Claude Code `/
 
 ### Intelligent Orchestration
 
-- **19 specialized agents** (with tier variants) for architecture, research, design, testing, data analysis
+- **20 specialized agents** (with tier variants) for architecture, research, design, testing, data analysis
 - **Smart model routing** - Haiku for simple tasks, Opus for complex reasoning
 - **Automatic delegation** - Right agent for the job, every time
 - **[Model × Agent Compatibility Matrix](docs/agents/model-compatibility.md)** - Which model to pair with each agent, with premium/balanced/budget presets
@@ -362,6 +362,14 @@ Wrap handler at server.py:42 in try/except ClientDisconnectedError...
 **Auto-inject:** Matching skills load into context automatically — no manual recall needed
 
 Project-scoped OMC-authored skills are stored in `.omc/skills/` and are intended to be committed when you want them shared. During slash/skill execution OMC also reads Claude Code workspace skills from `.claude/skills/` and compatibility skills from `.agents/skills/`, so existing workspace-local `SKILL.md` packages remain callable without copying them into user-global skills. If you create project-local skills inside a linked git worktree and do not commit them, they disappear when that worktree is removed.
+
+### Skill Providers (external)
+
+Reference curated external engineering skills — `SKILL.md` + `references/` packages such as [supabase/agent-skills](https://github.com/supabase/agent-skills) — without vendoring them. A provider manifest declares capabilities + activation keywords; OMC uses those to detect backend tasks and route them to the `backend-engineer` agent, which loads the provider's skills before implementing.
+
+- **First provider: Supabase** — `providers/supabase.json` maps backend work to the `supabase` + `supabase-postgres-best-practices` skills.
+- **Reference, not copy** — skills stay installed externally (e.g. `~/.agents/skills/`); `skills-lock.json` records `source` + SHA-256 for drift/update checking.
+- **Extensible** — add more providers (Temporal, cloud providers, …) as `providers/*.json` manifests.
 
 ### `.omc/` state and git
 
