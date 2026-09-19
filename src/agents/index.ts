@@ -26,6 +26,7 @@ export {
 
 // Individual agent exports
 export { architectAgent, ARCHITECT_PROMPT_METADATA } from './architect.js';
+export { backendEngineerAgent, BACKEND_ENGINEER_PROMPT_METADATA } from './backend-engineer.js';
 export { exploreAgent, EXPLORE_PROMPT_METADATA } from './explore.js';
 export { executorAgent, EXECUTOR_PROMPT_METADATA } from './executor.js';
 export { designerAgent, FRONTEND_ENGINEER_PROMPT_METADATA } from './designer.js';

@@ -1,0 +1,40 @@
+{
+  "name": "supabase",
+  "type": "backend-skill-provider",
+  "skills": ["supabase", "supabase-postgres-best-practices"],
+  "capabilities": {
+    "database": { "schema_design": true, "migration": true, "rls": true },
+    "auth": { "enabled": true },
+    "storage": { "enabled": true },
+    "functions": { "enabled": true },
+    "realtime": { "enabled": true },
+    "vectors": { "enabled": true }
+  },
+  "activation": {
+    "keywords": [
+      "supabase",
+      "postgres",
+      "postgresql",
+      "database",
+      "schema",
+      "migration",
+      "rls",
+      "auth",
+      "authentication",
+      "authorization",
+      "edge functions",
+      "storage",
+      "realtime",
+      "vectors",
+      "pgvector",
+      "cron",
+      "queues",
+      "sql",
+      "row level security"
+    ]
+  },
+  "source": {
+    "repo": "supabase/agent-skills",
+    "type": "github"
+  }
+}

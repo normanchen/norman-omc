@@ -44,6 +44,7 @@ const EXPECTED_DEFAULTS: Record<CanonicalTeamRole, { model: string; agent: strin
   planner: { model: CLAUDE_FAMILY_DEFAULTS.OPUS, agent: 'planner' },
   analyst: { model: CLAUDE_FAMILY_DEFAULTS.OPUS, agent: 'analyst' },
   architect: { model: CLAUDE_FAMILY_DEFAULTS.OPUS, agent: 'architect' },
+  'backend-engineer': { model: CLAUDE_FAMILY_DEFAULTS.SONNET, agent: 'backendEngineer' },
   executor: { model: CLAUDE_FAMILY_DEFAULTS.SONNET, agent: 'executor' },
   debugger: { model: CLAUDE_FAMILY_DEFAULTS.SONNET, agent: 'debugger' },
   critic: { model: CLAUDE_FAMILY_DEFAULTS.OPUS, agent: 'critic' },

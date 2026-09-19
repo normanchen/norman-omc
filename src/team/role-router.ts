@@ -7,6 +7,8 @@
  * then maps that intent to the most appropriate worker role.
  */
 
+import { isBackendTask } from '../skill-providers/match.js';
+
 export type LaneIntent =
   | 'implementation'
   | 'verification'
@@ -138,6 +140,7 @@ export const ROLE_KEYWORDS: Record<string, RegExp[]> = {
   designer: [/\bdesign\b/i, /\barchitect/i, /\bui\b/i, /\bux\b/i, /\bwireframe\b/i],
   'code-simplifier': [/\brefactor/i, /\bclean/i, /\bsimplif/i, /\bdebt\b/i, /\bunused\b/i],
   'security-reviewer': [/\bsecurity\b/i, /\bvulnerabilit/i, /\bcve\b/i, /\bowasp\b/i, /\bxss\b/i],
+  'backend-engineer': [/\bsupabase\b/i, /\bpostgres(?:ql)?\b/i, /\bdatabase\b/i, /\bschema\b/i, /\bmigration\b/i, /\brls\b/i, /\bsql\b/i, /\bauth(?:entication|orization)?\b/i, /\bstorage\b/i, /\brealtime\b/i, /\bpgvector\b/i, /\bedge\s+functions?\b/i, /\brow[ -]?level[ -]?security\b/i, /\bbackend\b/i],
   'quality-reviewer': [/\breview\b/i, /\baudit\b/i, /\bcheck\b/i],
   'test-engineer': [/\btest/i, /\bverif/i, /\bvalidat/i, /\bspec\b/i, /\bcoverage\b/i],
   executor: [/\bimplement/i, /\bbuild\b/i, /\bcreate\b/i, /\badd\b/i, /\bwrite\b/i],
@@ -176,9 +179,10 @@ export function inferLaneIntent(text: string): LaneIntent {
  * 5. cleanup → 'code-simplifier' (high)
  * 6. review + security domain → 'security-reviewer' (high), else 'quality-reviewer' (high)
  * 7. verification → 'test-engineer' (high)
- * 8. implementation + security domain → fallbackRole (stays put)
- * 9. Keyword-count scoring for ambiguous intents
- * 10. Unknown → fallbackRole (low)
+ * 8. implementation + backend domain → 'backend-engineer' (high)
+ * 9. implementation + security domain → fallbackRole (stays put)
+ * 10. Keyword-count scoring for ambiguous intents
+ * 11. Unknown → fallbackRole (low)
  */
 export function routeTaskToRole(
   taskSubject: string,
@@ -215,6 +219,9 @@ export function routeTaskToRole(
       return { role: 'test-engineer', confidence: 'high', reason: 'verification intent detected' };
 
     case 'implementation':
+      if (isBackendTask(combined)) {
+        return { role: 'backend-engineer', confidence: 'high', reason: 'backend domain detected' };
+      }
       // Security implementation stays on fallback role — not routed to security-reviewer
       return {
         role: fallbackRole,

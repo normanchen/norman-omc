@@ -21877,7 +21877,8 @@ function resolveSuperprojectRoot(cwd) {
         encoding: "utf-8",
         stdio: ["pipe", "pipe", "pipe"],
         windowsHide: true,
-        timeout: 5e3
+        timeout: 5e3,
+        env: { ...process.env, LC_ALL: "C" }
       }).trim();
     } catch (error2) {
       completed = depth === 0 && isDefinitiveNonGitError(error2);
@@ -22206,7 +22207,12 @@ function runGitShowToplevel(cwd) {
     encoding: "utf-8",
     stdio: ["pipe", "pipe", "pipe"],
     windowsHide: true,
-    timeout: 5e3
+    timeout: 5e3,
+    // Force a C locale so git emits deterministic English error text regardless
+    // of the user's LANG/LC_ALL (e.g. zh_CN). isNotAGitRepositoryError() matches
+    // English text; a localized "not a git repository" message would be
+    // misclassified as probe_failed and break the HUD on non-git working dirs.
+    env: { ...process.env, LC_ALL: "C" }
   });
 }
 function probeGitTopLevel(cwd) {
@@ -25767,6 +25773,7 @@ var CANONICAL_TEAM_ROLES = [
   "planner",
   "analyst",
   "architect",
+  "backend-engineer",
   "executor",
   "debugger",
   "critic",
@@ -25785,6 +25792,7 @@ var KNOWN_AGENT_NAMES = [
   "analyst",
   "planner",
   "architect",
+  "backendEngineer",
   "debugger",
   "executor",
   "verifier",
@@ -25882,6 +25890,7 @@ function buildDefaultConfig() {
       analyst: { model: defaultTierModels.HIGH },
       planner: { model: defaultTierModels.HIGH },
       architect: { model: defaultTierModels.HIGH },
+      backendEngineer: { model: defaultTierModels.MEDIUM },
       debugger: { model: defaultTierModels.MEDIUM },
       executor: { model: defaultTierModels.MEDIUM },
       verifier: { model: defaultTierModels.MEDIUM },

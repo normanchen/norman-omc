@@ -36,6 +36,7 @@
     "hooks",
     "scripts",
     "skills",
+    "providers",
     "templates",
     "docs",
     ".claude-plugin",

@@ -736,6 +736,7 @@ Always use `oh-my-claudecode:` prefix when calling via Task tool.
 | **Search**         | `explore`               | -                     | `explore-high`      |
 | **Research**       | -                       | `document-specialist` | -                   |
 | **Frontend**       | `designer-low`          | `designer`            | `designer-high`     |
+| **Backend**        | -                       | `backend-engineer`    | -                   |
 | **Docs**           | `writer`                | -                     | -                   |
 | **Visual**         | -                       | `vision`              | -                   |
 | **Planning**       | -                       | -                     | `planner`           |
@@ -760,6 +761,7 @@ Always use `oh-my-claudecode:` prefix when calling via Task tool.
 | Complex architectural search   | `explore-high`                                                         | opus   |
 | Simple code change             | `executor-low`                                                         | haiku  |
 | Feature implementation         | `executor`                                                             | sonnet |
+| Backend/database (schema, migrations, RLS, auth) | `backend-engineer`                                    | sonnet |
 | Complex refactoring            | `executor-high`                                                        | opus   |
 | Debug simple issue             | `architect-low`                                                        | haiku  |
 | Debug complex issue            | `architect`                                                            | opus   |

@@ -111,9 +111,15 @@ describe('role-router', () => {
     });
 
     it('keeps implementation + security domain on fallback role (not security-reviewer)', () => {
-      const result = routeTaskToRole('implement auth', 'add authentication with JWT and authorization checks', 'executor');
+      const result = routeTaskToRole('implement xss sanitization', 'escape untrusted html in templates', 'executor');
       expect(result.role).toBe('executor');
       expect(result.confidence).toBe('medium');
+    });
+
+    it('routes backend implementation to backend-engineer', () => {
+      const result = routeTaskToRole('implement auth', 'add authentication for the app', 'executor');
+      expect(result.role).toBe('backend-engineer');
+      expect(result.confidence).toBe('high');
     });
 
     it('uses fallback role with low confidence for unknown intent', () => {

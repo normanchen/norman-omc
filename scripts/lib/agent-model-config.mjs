@@ -88,6 +88,7 @@ const AGENT_CONFIG_KEY_MAP = {
   analyst: 'analyst',
   planner: 'planner',
   architect: 'architect',
+  'backend-engineer': 'backendEngineer',
   debugger: 'debugger',
   executor: 'executor',
   verifier: 'verifier',

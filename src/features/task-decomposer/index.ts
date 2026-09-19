@@ -706,9 +706,9 @@ function generatePromptForComponent(
 function selectAgentType(component: Component): string {
   const roleToAgent: Record<ComponentRole, string> = {
     frontend: 'oh-my-claudecode:designer',
-    backend: 'oh-my-claudecode:executor',
-    database: 'oh-my-claudecode:executor',
-    api: 'oh-my-claudecode:executor',
+    backend: 'oh-my-claudecode:backend-engineer',
+    database: 'oh-my-claudecode:backend-engineer',
+    api: 'oh-my-claudecode:backend-engineer',
     ui: 'oh-my-claudecode:designer',
     shared: 'oh-my-claudecode:executor',
     testing: 'oh-my-claudecode:qa-tester',

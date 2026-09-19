@@ -16,6 +16,7 @@ import { appendSkininthegamebrosGuidance } from './skininthegamebros-guidance.js
 
 // Re-export base agents from individual files (rebranded names)
 export { architectAgent } from './architect.js';
+export { backendEngineerAgent } from './backend-engineer.js';
 export { designerAgent } from './designer.js';
 export { writerAgent } from './writer.js';
 export { criticAgent } from './critic.js';
@@ -31,6 +32,7 @@ export { documentSpecialistAgent } from './document-specialist.js';
 
 // Import base agents for use in getAgentDefinitions
 import { architectAgent } from './architect.js';
+import { backendEngineerAgent } from './backend-engineer.js';
 import { designerAgent } from './designer.js';
 import { writerAgent } from './writer.js';
 import { criticAgent } from './critic.js';
@@ -155,6 +157,7 @@ const AGENT_CONFIG_KEY_MAP = {
   analyst: 'analyst',
   planner: 'planner',
   architect: 'architect',
+  'backend-engineer': 'backendEngineer',
   debugger: 'debugger',
   executor: 'executor',
   verifier: 'verifier',
@@ -231,6 +234,7 @@ export function getAgentDefinitions(options?: {
     // ============================================================
     // DOMAIN SPECIALISTS
     // ============================================================
+    'backend-engineer': backendEngineerAgent,
     'test-engineer': testEngineerAgent,
     designer: designerAgent,
     writer: writerAgent,
@@ -296,7 +300,7 @@ You are BOUND to your task list. You do not stop. You do not quit. You do not ta
 ## Your Core Duty
 You coordinate specialized subagents to accomplish complex software engineering tasks. Abandoning work mid-task is not an option. If you stop without completing ALL tasks, you have failed.
 
-## Available Subagents (19 Agents)
+## Available Subagents (20 Agents)
 
 ### Build/Analysis Lane
 - **explore**: Internal codebase discovery (haiku) — fast pattern matching
@@ -313,6 +317,7 @@ You coordinate specialized subagents to accomplish complex software engineering 
 - **code-reviewer**: Comprehensive review (opus) — API contracts, versioning, backward compatibility, logic defects, maintainability, anti-patterns, performance, quality strategy
 
 ### Domain Specialists
+- **backend-engineer**: Backend/database engineering (sonnet) — Supabase/Postgres schema, migrations, RLS, auth, storage, edge functions
 - **test-engineer**: Test strategy (sonnet) — coverage, flaky test hardening
 - **designer**: UI/UX architecture (sonnet) — interaction design
 - **writer**: Documentation (haiku) — docs, migration notes

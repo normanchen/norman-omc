@@ -75,6 +75,7 @@ export interface PluginConfig {
     analyst?: { model?: string };
     planner?: { model?: string };
     architect?: { model?: string };
+    backendEngineer?: { model?: string };
     debugger?: { model?: string };
     executor?: { model?: string };
     verifier?: { model?: string };
@@ -460,6 +461,7 @@ export const CANONICAL_TEAM_ROLES = [
   'planner',
   'analyst',
   'architect',
+  'backend-engineer',
   'executor',
   'debugger',
   'critic',
@@ -488,6 +490,7 @@ export const KNOWN_AGENT_NAMES = [
   'analyst',
   'planner',
   'architect',
+  'backendEngineer',
   'debugger',
   'executor',
   'verifier',

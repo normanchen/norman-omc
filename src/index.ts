@@ -166,6 +166,8 @@ export {
   // Individual agents with metadata (rebranded intuitive names)
   architectAgent,
   ARCHITECT_PROMPT_METADATA,
+  backendEngineerAgent,
+  BACKEND_ENGINEER_PROMPT_METADATA,
   exploreAgent,
   EXPLORE_PROMPT_METADATA,
   DOCUMENT_SPECIALIST_PROMPT_METADATA,

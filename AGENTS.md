@@ -135,6 +135,7 @@ Review Lane:
 Domain Specialists:
 - `/prompts:dependency-expert`: External SDK/API/package evaluation
 - `/prompts:test-engineer`: Test strategy, coverage, flaky-test hardening
+- `/prompts:backend-engineer`: Backend/database engineering (Supabase/Postgres — schema, migrations, RLS, auth, storage)
 - `/prompts:quality-strategist`: Quality strategy, release readiness, risk assessment
 - `/prompts:debugger`: Build/toolchain/type failures, root-cause analysis
 - `/prompts:designer`: UX/UI architecture, interaction design
@@ -240,6 +241,9 @@ Anti-Slop Cleanup:
 
 Bug Investigation:
   explore + debugger + executor + test-engineer + verifier
+
+Backend/Database:
+  architect -> backend-engineer -> security-reviewer -> verifier
 
 Code Review:
   style-reviewer + code-reviewer + api-reviewer + security-reviewer

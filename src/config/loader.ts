@@ -52,6 +52,7 @@ export function buildDefaultConfig(): PluginConfig {
       analyst: { model: defaultTierModels.HIGH },
       planner: { model: defaultTierModels.HIGH },
       architect: { model: defaultTierModels.HIGH },
+      backendEngineer: { model: defaultTierModels.MEDIUM },
       debugger: { model: defaultTierModels.MEDIUM },
       executor: { model: defaultTierModels.MEDIUM },
       verifier: { model: defaultTierModels.MEDIUM },
@@ -1015,6 +1016,10 @@ export function generateConfigSchema(): object {
             properties: { model: { type: "string" } },
           },
           architect: {
+            type: "object",
+            properties: { model: { type: "string" } },
+          },
+          backendEngineer: {
             type: "object",
             properties: { model: { type: "string" } },
           },
